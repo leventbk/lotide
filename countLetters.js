@@ -7,8 +7,11 @@ const assertEqual = function(actual, expected) {
 	}
   };
   /////////////////////////
+  //https://web.compass.lighthouselabs.ca/days/w01d3/activities/287
 
 const countLetters = function (string) {
+	//edge case
+	if(typeof string !== 'string') return undefined
 
 	let letterCount = {};
 
@@ -27,4 +30,4 @@ const countLetters = function (string) {
 	return letterCount;
 }
 
-console.log(countLetters('Lighthouse in the house'));
+assertEqual(countLetters({}), undefined)
