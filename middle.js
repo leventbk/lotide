@@ -47,4 +47,7 @@ const middle = function (arr) {
 console.log(middle([1, 2, 3, 4])) // => [2, 3]
 console.log(middle([1, 2, 3, 4, 5, 6])) // => [3, 4]
 
+
 const person = {name: "Paul",address: {street: "310 W 95th",city: "New York",zipCode: 10027}};
+
+module.export = middle;
