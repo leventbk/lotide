@@ -1,50 +1,41 @@
 const eqArrays = function(arr1, arr2) {
-	if (arr1.toString() === arr2.toString()) {
-	return true;
-	//console.log(true);
-	
-	} else {
-	return false;
-	//console.log(false);
-	}
+  if (arr1.length !== arr2.length) { // check if both arrays have the same length.
+    return false;
+  }
+
+  for (let i = 0; i < arr1.length; i++) { // loop over each element & check equality. return false if there is a mismatch
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+
+  return true; // no mismatches were found so return true.
 };
-  
-const assertArraysEqual = function (firstArr, secondArr) {
-	console.log( `${firstArr} and ${secondArr}`)
-	return eqArrays(firstArr, secondArr)
-}
 
-//**************************** */
-
-const without = function (source, itemsToRemove) {
-	let wanted;
-	if ( assertArraysEqual(source, itemsToRemove) === true) {
-		console.log(`source code's totalled removed`);
-		return wanted = [];
-
-	} else {
-		//make 2 array parameter string, Then, remove the second array's value from first one.
-		for ( let i = 0; i < itemsToRemove.length; i++) {
-			const index = source.indexOf(itemsToRemove[i]);
-			if (index !== -1) {
-				source.splice(index, 1);
-			}
-		}
-		console.log(source)
-		console.log("I will be working on it")
-	}
-
-}
+const assertArraysEqual = function(arr1, arr2) {
+  if (eqArrays(arr1, arr2) === true) {
+    console.log(`✅Assertion passed: Two arrays are equal.`);
+  } else {
+    console.log(`🛑Assertion failed: Two arrays are not equal.`);
+  }
+};
 
 
 
-// test case
-// without([1,2],[1,2])
-// without([1, 2, 3], [1]) // => [2, 3]
-// without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
+const without = function(source, itemsToRemove) {
+  let filteredArray = [];
+  for (let i = 0; i < source.length; i++) {
+    if (itemsToRemove.includes(source[i]) === false) {
+      filteredArray.push(source[i]);
+    }
+  }
+  return filteredArray;
+};
 
-const words = ["hello", "world", "lighthouse"];
-console.log('source first' + words)
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-//assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+assertArraysEqual(without([1, 2, 3, 4, 5], [4, 5]), [1, 2, 3]);
+assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
+assertArraysEqual(without([1, 2, 1, 1, 2], [1]), [2, 2]);
+
+assertArraysEqual(without([1, 2, 3, 4, 5], [5, 2, 3, 4, 1]), []);
+
+assertArraysEqual(without([1, 2, 3, 4, 5], []), [1, 2, 3, 4, 5]);
