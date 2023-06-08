@@ -1,15 +1,12 @@
-const eqArrays = function(arr1, arr2) {
-  if (arr1.toString() === arr2.toString()) {
-    console.log(true);
-	
+const eqArrays = require('./eqArrays');
+
+const assertArraysEqual = function(arr1, arr2) {
+  if (eqArrays(arr1, arr2) === true) {
+    console.log(`✅✅✅ Assertion Passed: Arrays are equal.`);
+
   } else {
-    console.log(false);
+    console.log(`❌❌❌ Assertion Failed: Arrays are NOT equal.`);
   }
 };
 
-const assertArraysEqual = function (firstArr, secondArr) {
-	eqArrays(firstArr, secondArr)
-	console.log( `${firstArr} and ${secondArr}`)
-}
-
-assertArraysEqual([1,2,3],[1,2,3,4])
+module.exports = assertArraysEqual;
