@@ -9,7 +9,7 @@
   "scripts": {
     "test": "mocha"
   },
-  "author": "levent-karakus",
+  "author": "levent-karakus (https://github.com/leventbk/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/leventbk/lotide/issues"
