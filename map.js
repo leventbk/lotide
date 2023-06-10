@@ -1,24 +1,4 @@
-const assertEqual = function(actual, expected) {
-  const answer = actual === expected ? `✅✅✅ Assertion Passed: ${actual} === ${expected}` : `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
-  console.log(answer);
-};
-  
-const eqArrays = (firstArray, secondArray) => {
-  if (firstArray.length !== secondArray.length) {
-	  return false;
-  }
-  for (let i = 0; i < firstArray.length; i++) {
-	  if (firstArray[i] !== secondArray[i]) {
-      return false;
-	  }
-  }
-  return true;
-};
-  
-const assertArraysEqual = (firstArray, secondArray) => {
-  assertEqual(eqArrays(firstArray, secondArray), true);
-};
-  
+
 const map = function(array, callback) {
   const results = [];
   for (let item of array) {
@@ -26,7 +6,7 @@ const map = function(array, callback) {
   }
   return results;
 };
-  
+module.exports = map;
 const words = ["ground", "control", "to", "major", "tom"];
   
 const results1 = map(words, word => word[0]);

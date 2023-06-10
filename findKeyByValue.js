@@ -18,7 +18,7 @@ const assertEqual = function(actual, expected) {
 	}
 	return undefined
 }
-
+module.exports = findKeyByValue;
 
   const bestTVShowsByGenre = { 
 	sci_fi: "The Expanse",

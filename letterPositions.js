@@ -1,20 +1,3 @@
-const eqArrays = function(arr1, arr2) {
-	if (arr1.toString() === arr2.toString()) {
-	  console.log(true);
-	  
-	} else {
-	  console.log(false);
-	}
-  };
-  
-  const assertArraysEqual = function (firstArr, secondArr) {
-	  eqArrays(firstArr, secondArr)
-	  console.log( `${firstArr} and ${secondArr}`)
-  }
-  
-
-  
-
 const letterPositions = function(sentence) {
 	const results = {};
 
@@ -27,10 +10,7 @@ const letterPositions = function(sentence) {
 		}
 	  }
 	}
-  
 	return results;
-
-
 }
-
+module.exports = letterPositions;
 assertArraysEqual(letterPositions("hello").e, [1]);

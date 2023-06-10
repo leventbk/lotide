@@ -29,5 +29,5 @@ const countLetters = function (string) {
 	
 	return letterCount;
 }
-
+module.exports = countLetters;
 assertEqual(countLetters({}), undefined)
