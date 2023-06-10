@@ -1,16 +1,45 @@
-Lotide kontrol: 
+# Lotide
 
-I understand, I can give you few bullets to check before proceeding publishing it
--make sure every file has the same name of the file as a function declared and that function exported on the bottom, if there is any extra function required that is not called as the same name of the file it should be a require statement rather than other declaration
+A mini clone of the [Lodash](https://lodash.com) library.
 
--make sure all your test cases are located in the /tests folder  and that they contained no declared functions but only require statements calling the same function as the name of the test (for example headTest.js should only have the head function required at the top)
--make sure all the test cases are using mocha and chai, if any of those are still using your custom “assertEqual” or “assertArraysEqual” functions, those should be refactored to use mocha and chai
--make sure you have a file called index.js where all your other files/functions are required and as well exported inside an object
--make sure you have a read me file that is properly describing all your functions and guiding on how to both use your project as a library and as well how to clone and test your project as an individual package 
+## Purpose
 
-Yes I would even suggest to delete those test cases (just the assert ones)
+**_BEWARE:_ This library was published for learning purposes. It is _not_ intended for use in production-grade software.**
 
-As you mentioned those are not possible to be tested due to not returning any value just console logging as a side effect, correct
-So if you already have those check marks I think you pretty much have all what is needed 🙂
-Run npm test to make sure all tests passes and try downloading and using your project from an external package using npm install [your-npm-lotide] and requiring it
-If this last two work you are ready to submit
+This project was created and published by me as part of my learnings at Lighthouse Labs. 
+
+## Usage
+
+**Install it:**
+
+`npm install @leventbk/lotide`
+
+**Require it:**
+
+`const _ = require('@leventbk/lotide');`
+
+**Call it:**
+
+`const results = _.tail([1, 2, 3]) // => [2, 3]`
+
+## Documentation
+
+The following functions are currently implemented:
+
+* `assertArraysEqual`: assertion function for arrays
+* `assertEqual`: assertion function for primitive values
+* `assertObjectsEqual`: assertion function for objects
+* `countLetters`: counts how many of each letter there is in a string
+* `countOnly`: counts only specific values in an array
+* `eqArrays`: comparison function for arrays
+* `eqObjects`: comparison function for objects
+* `findKey`: finds the key in an object whose value matches a certain criteria
+* `findKeyByValue`: finds the key in an object by its value
+* `flatten`: flattens a nested array (only for 2-level arrays)
+* `head`: returns the first value in an array
+* `letterPositions`: returns the positions of letters in a string
+* `map`: a clone of the Array.prototype.map method
+* `middle`: returns the middle element(s) of an array
+* `tail`: returns all the values except the first one of an array
+* `takeUntil`: takes elements of an array until a condition becomes true
+* `without`: returns a copy of an array without certain elements
