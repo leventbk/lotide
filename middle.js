@@ -10,11 +10,13 @@ const middle = function (arr) {
 		return [arr[middleIndex -1], arr[middleIndex]]
 
 	} else {
-		return arr[middleIndex];
+		return [arr[middleIndex]];
 	}
 };
 module.exports = middle;
 console.log(middle([1, 2, 3, 4])) // => [2, 3]
 console.log(middle([1, 2, 3, 4, 5, 6])) // => [3, 4]
 console.log(middle([1, 2, 3, 4, 5, 6, 7])) // => 4
-
+console.log(middle([1, 2, 3])) // => 2
+console.log(middle(['hi', 'hello', 'what'])) // => 'hello'
+console.log(middle([1, 2, 3])) // => 2
