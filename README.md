@@ -1,4 +1,4 @@
-# Lotide
+# Lotide :dizzy:
 
 A mini clone of the [Lodash](https://lodash.com) library.
 
